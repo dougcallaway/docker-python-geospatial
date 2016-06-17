@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y \
 	libgeos-dev \
 	libgdal-dev \
 	# optional plotting dependencies
+	python-qt4 \
 	python-matplotlib
 
 # Switch back to jovyan to avoid accidental container runs as root
