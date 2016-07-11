@@ -30,6 +30,6 @@ RUN conda install \
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
 RUN cd /home/jovyan/.ipython/nbextensions \
-	& wget https://gist.github.com/robclewley/75b7719119892b99d73b/raw/b300a29dacd6ad7ec0e39ca42e3841d33c79c454/notebook_importing.py \
-	& touch __init__.py
+	&& wget https://gist.github.com/robclewley/75b7719119892b99d73b/raw/b300a29dacd6ad7ec0e39ca42e3841d33c79c454/notebook_importing.py \
+	&& touch __init__.py
 	
