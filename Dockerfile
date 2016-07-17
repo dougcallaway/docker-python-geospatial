@@ -15,11 +15,7 @@ RUN apt-get install -y \
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN conda install -c conda-forge \
-	fiona \
-	shapely \
-	pyproj \
-	geopandas 
+RUN pip install geopandas 
 
 # Optional dependencies
 # rtree: improved spatial indexing
