@@ -15,9 +15,9 @@ RUN apt-get install -y \
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN pip install \
-	pandas \
-	geopandas 
+#RUN pip install \
+#	pandas \
+#	geopandas 
 
 # Optional dependencies
 # rtree: improved spatial indexing
