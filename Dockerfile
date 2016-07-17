@@ -15,17 +15,8 @@ RUN apt-get install -y \
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-#RUN pip install \
-#	pandas \
-#	geopandas 
-
-# Optional dependencies
-# rtree: improved spatial indexing
-# descartes, pysal: geographic plotting
-RUN conda install \
-	rtree \
-	descartes \
-	pysal
+RUN conda install -c ioos -y \
+	geopandas
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
