@@ -5,7 +5,8 @@ USER root
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN mkdir -p /home/jovyan/.conda/ \
+RUN conda install -y psutil \
+	&& mkdir -p /home/jovyan/.conda/ \
 	&& cd /home/jovyan/.conda/ \
 	&& wget https://raw.githubusercontent.com/DCAL12/docker-python-geospatial/master/spec-file.txt \
 	&& conda create -y --name geospatial --file /home/jovyan/.conda/spec-file.txt python=3 \
