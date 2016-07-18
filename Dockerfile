@@ -1,4 +1,8 @@
 FROM jupyter/base-notebook:latest
+USER jovyan
+
+# for conda create
+RUN conda install pcutil
 
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
