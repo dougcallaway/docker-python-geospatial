@@ -2,7 +2,7 @@ FROM jupyter/base-notebook:latest
 USER jovyan
 
 # for conda create
-RUN conda install pcutil
+RUN conda install psutil
 
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
