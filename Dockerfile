@@ -1,12 +1,12 @@
 FROM jupyter/base-notebook:latest
 
 # required for creating conda environment
-RUN conda install --yes psutil
+#RUN conda install --yes psutil
 
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
-RUN conda create --yes --file spec-file.txt --name geospatial python=3 \
-	&& source activate geospatial
+RUN conda create --yes --file spec-file.txt --name geospatial python=3
+RUN source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
