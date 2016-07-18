@@ -13,4 +13,4 @@ RUN conda create --yes --file spec-file.txt --name geospatial python=3 \
 # module available via 'from nbextensions import notebook_importing'
 WORKDIR /home/jovyan/.ipython/nbextensions/
 ADD https://gist.github.com/DCAL12/1a872bd63bedfb7b12612c8a7ec0f52e/raw/228276e3c7c8e151f32e04e85ea8c33057d2d6a5/notebook_importing.py .
-RUN touch /home/jovyan/.ipython/nbextensions/__init__.py
+ADD __init__.py .
