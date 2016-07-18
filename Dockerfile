@@ -5,12 +5,12 @@ USER root
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN conda install -y psutil 
-RUN mkdir -p /home/jovyan/.conda/ 
-RUN cd /home/jovyan/.conda/ 
-#RUN wget https://raw.githubusercontent.com/DCAL12/docker-python-geospatial/master/spec-file.txt 
-RUN conda create --yes --quiet --file spec-file.txt --name geospatial python=3 geopandas   
-RUN source activate geospatial
+# required for creating conda environment
+RUN conda install --yes psutil 
+
+ADD spec-file.txt
+RUN conda create --yes --file spec-file.txt --name geospatial python=3 geopandas \   
+	&& source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
