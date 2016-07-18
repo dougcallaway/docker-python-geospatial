@@ -8,7 +8,7 @@ USER jovyan
 # required for creating conda environment
 RUN conda install --yes psutil 
 
-ADD spec-file.txt
+ADD spec-file.txt .
 RUN conda create --yes --file spec-file.txt --name geospatial python=3 geopandas \   
 	&& source activate geospatial
 	
