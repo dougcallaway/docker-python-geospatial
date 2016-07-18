@@ -2,21 +2,11 @@ FROM jupyter/base-notebook:latest
 
 USER root
 
-RUN apt-get update && apt-get install -y \
-	g++ \
-	libgeos-dev \
-	libgdal-dev
-	
-# optional plotting dependencies
-RUN apt-get install -y \	
-	python-qt4 \
-	python-matplotlib
-
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN conda install -c ioos -y \
-	geopandas
+RUN conda create python=3 --name geospatial geopandas \
+	&& source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
