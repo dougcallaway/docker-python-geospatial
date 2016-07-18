@@ -9,7 +9,7 @@ RUN conda install -y psutil
 RUN mkdir -p /home/jovyan/.conda/ 
 RUN cd /home/jovyan/.conda/ 
 RUN wget https://raw.githubusercontent.com/DCAL12/docker-python-geospatial/master/spec-file.txt 
-RUN conda create --yes --quiet --file /home/jovyan/.conda/spec-file.txt --name geospatial python=3   
+RUN conda create --yes --quiet --name geospatial python=3 geopandas   
 RUN source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
