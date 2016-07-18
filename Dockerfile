@@ -1,7 +1,7 @@
 FROM jupyter/base-notebook:latest
 
 # required for creating conda environment
-RUN conda install psutil
+RUN conda install --yes psutil
 
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
