@@ -3,7 +3,7 @@ FROM jupyter/base-notebook:latest
 USER root
 
 # Switch back to unprivileged user to avoid accidental container runs as root
-USER jovyan
+#USER jovyan
 
 # required for creating conda environment
 RUN conda install --yes psutil 
