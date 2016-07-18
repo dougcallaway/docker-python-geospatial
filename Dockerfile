@@ -5,7 +5,7 @@ USER root
 # Switch back to unprivileged user to avoid accidental container runs as root
 USER jovyan
 
-RUN conda create python=3 --name geospatial geopandas \
+RUN conda create python=3 -y --name geospatial geopandas \
 	&& source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
