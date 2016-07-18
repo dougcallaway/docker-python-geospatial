@@ -1,14 +1,12 @@
 FROM jupyter/base-notebook:latest
 
-#USER root
-
-# Switch back to unprivileged user to avoid accidental container runs as root
-#USER jovyan
-
 # required for creating conda environment
+RUN conda install psutil
+
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
-RUN conda install --yes --file spec-file.txt
+RUN&& conda create --yes --file spec-file.txt --name geospatial python=3 \
+	source activate geospatial
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
