@@ -6,8 +6,8 @@ RUN conda install --yes psutil
 
 WORKDIR /home/jovyan/.conda/
 ADD spec-file.txt .
-RUN conda create --yes --file spec-file.txt --name geospatial python=3 \
-	&& /bin/bash -c "source activate geospatial"
+RUN conda create --yes --file spec-file.txt --name geospatial python=3
+RUN /bin/bash -c "source activate geospatial"
 	
 # enable importing iPython/Jupyter notebooks as python modules
 # module available via 'from nbextensions import notebook_importing'
