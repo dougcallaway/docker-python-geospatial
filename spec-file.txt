@@ -2,7 +2,6 @@
 # $ conda create --name <env> --file <this file>
 # platform: linux-64
 cligj=0.4.0=py35_0
-ca-certificates=2016.2.28=1
 cairo=1.12.18=7
 click=6.6=py35_0
 click-plugins=1.0.3=py35_0
