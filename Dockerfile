@@ -23,3 +23,7 @@ RUN pip install \
 # optional geopandas dependency
 RUN conda install --yes \
 	rtree
+	matplotlib
+
+# enable importing jupyter notebooks as modules
+RUN pip install jupynbimp
