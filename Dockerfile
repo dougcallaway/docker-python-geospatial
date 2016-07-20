@@ -22,7 +22,7 @@ RUN pip install \
 
 # optional geopandas dependency
 RUN conda install --yes \
-	rtree
+	rtree \
 	matplotlib
 
 # enable importing jupyter notebooks as modules
