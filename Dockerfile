@@ -23,13 +23,3 @@ RUN pip install \
 # optional geopandas dependency
 RUN conda install --yes \
 	rtree
-
-# enable importing iPython/Jupyter notebooks as python modules
-# module available via 'from nbextensions import notebook_importing'
-WORKDIR /home/$NB_USER/
-RUN mkdir -p -m 700 .ipython/nbextensions/
-ADD https://gist.github.com/DCAL12/1a872bd63bedfb7b12612c8a7ec0f52e/raw/228276e3c7c8e151f32e04e85ea8c33057d2d6a5/notebook_importing.py .ipython/nbextensions/
-COPY __init__.py .ipython/nbextensions/
-RUN chown -R $NB_USER:users .ipython
-
-WORKDIR /home/$NB_USER/work
